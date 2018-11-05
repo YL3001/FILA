@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/zc.css"/>
+	</head>
+	<body>
+		<header>
+			<a href="index.html"><img src="../img/logo.png"/></a>
+			<div class="wrap">	
+				<input type="text" value="卫衣" />
+				<button id="">搜索</button>
+				<a href="#">登录</a>
+				<a href="#">注册</a>
+				<a href="#"><span class="pic"></span><span id="addcar"></span></a>
+				<span></span>
+			</div>
+		</header>
+		<div class="kf">
+			<span>客服</span>
+		</div>
+		<div class="container">
+			<div class="box">
+				<span>欢迎加入</span>
+				<img src="../img/logo.png" />
+			</div>
+			<div class="panel-body">
+		        <form id="member" class="form-zc" action="" method="post">
+		            <input type="text" name="login_name" class="form-control" id="login_name" placeholder="用户名">
+		            <input type="password" name="login_password" class="form-control" id="login_password" placeholder="密码">
+					<input type="password" name="psw_confirm" class="form-control" id="psw_confirm" placeholder="确认密码">
+		            <div class="col-md-5">
+		                <input type="text" name="img_vcode" class="form-control" id="img_vcode"  placeholder="图形验证码">
+		                <img src="" alt="验证码"  />
+		            </div>
+		            <div class="checkbox">
+		                <label>
+		                    <input onclick="return false;" type="checkbox" checked name="" value="1">同意
+		                </label>
+		                <a href="javascript:;" data-toggle="modal" data-target="#myModal">《会员注册条款》</a>
+		            </div>
+		            <button type="submit" data-loading-text="正在提交..." class="btn-warning">立即注册</button>
+		            <a class="text-center" href="javascript:;">已有账号？立即登录</a>
+		    	</form>
+		    </div>
+		</div>
+	</body>
+</html>
