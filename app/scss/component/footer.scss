@@ -1,0 +1,66 @@
+.foot{
+    width: 100%;
+    height: 50px;
+    background: #03234c;
+    overflow: hidden;
+}
+.ft-left{
+    float: left;
+    margin-left: 55px;
+    width: 730px;
+}
+.link-list{float: left;}
+.link-list li {float: left;}
+.link-list li a{
+    color: white;
+    line-height: 50px;
+    margin-right: 22px;
+}
+.ft-follow{float: left;}
+.ft-follow span{
+    color: white;
+    line-height: 50px;
+    float: left;
+}
+.ft-sina{
+    width: 36px;
+    height: 29px;
+    display: block;
+    float: left;
+    background: url(/images/xl.jpg) no-repeat center center;
+    margin-top: 12px;
+}
+.ft-weixin{
+    width: 36px;
+    height: 29px;
+    display: block;
+    float: left;
+    background: url(/images/wx.jpg) no-repeat center center;
+    margin-top: 12px;
+}
+#ft-weixin-tip {
+    display: none;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top:-172px;
+    left: 460px;
+    border: 1px solid black;
+}
+#ft-weixin-tip img{
+    width: 120px;
+    height: 120px;
+}
+
+.ft-service span{
+    float: left;
+    color: white;
+    line-height: 50px;
+    margin-left: 22px;
+}
+.ft-right span{
+    float: right;
+    margin-right: 55px;
+    color: #888888;
+    line-height: 50px;
+}
