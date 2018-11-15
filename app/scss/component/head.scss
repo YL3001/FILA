@@ -1,4 +1,4 @@
-*{margin: 0;padding: 0;}
+*{margin: 0;padding: 0;box-sizing: border-box;}
 ul li{list-style: none;}
 a{text-decoration: none;}
 header{
@@ -40,16 +40,37 @@ header .wrap button{
 	font-weight: bold;
 	margin-right: 20px;
 }
-header .wrap a{
+header .wrap .d_wrap a{
 	color:black;
 	margin-left: 15px;
 	cursor: pointer;
+}
+header .wrap .d_wrap{display: inline-block;}
+header .wrap .ac1{display: none;}
+header .wrap .a_wrap{
+    display: none;
+   
+}
+header .wrap .ac2{
+    font-size: 14px;
+    position: relative;
+    left: -10px;
+    top: 0px;
+    display: inline-block;
+    margin-right:10px ;
+}
+header .wrap .ac2 a{
+    color:black;
+    margin-left: 10px;
+    cursor: pointer;
 }
 header .wrap a .pic{
 	background: url(/images/car.jpg) no-repeat center center;
 	width: 18px;
 	height: 18px;
 	display: inline-block;
+	float: right;
+	margin-right:25px ;
 }
 header .wrap>span{
 	width: 22px;
@@ -66,6 +87,7 @@ header .wrap>span{
 	right: 0;
 	bottom: 200px;
 	background: white;
+	cursor: pointer;
 }
 .kf span{
 	width: 65px;

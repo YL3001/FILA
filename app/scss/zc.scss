@@ -1,4 +1,90 @@
-
+@import "component/head.scss";
+@import "component/footer.scss";
 .container{
+	padding-top: 157px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 330px;
+	min-height: calc(100vh - 50px);
 	
 }
+.box span{
+    font-size: 20px;
+    color: #222222;
+    margin-left: 80px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.box img{
+    width: 76px;
+    height: 26px;
+    vertical-align: middle;
+    
+}
+.panel-body{margin-top: 23px;}
+.form-control{
+    width: 330px;
+    height: 40px;
+    padding: 6px 12px 6px 12px;
+    border:1px solid #E8E8E8;
+    font-size: 14px;
+    line-height: 1.42;
+    color: #555555;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.yz{position: relative;}
+.yz #v_container{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    vertical-align: middle;
+}
+.checkbox{
+    width: 330px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+label{
+    padding-left: 30px;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 14px;
+}
+label input{
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 6px;
+    color: #333333;
+}
+.checkbox a{
+    color: #666666;
+     font-size: 14px;
+}
+.checkbox a:hover{color: black;}
+.btn{
+    width: 330px;
+    height: 40px;
+    color: #FFFFFF;
+    background: #03234C;
+    border: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    font-weight: 400;
+    line-height: 1.42;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.text-center{
+    display: block;
+    width: 330px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+}
+.text-center:hover{color: black;}

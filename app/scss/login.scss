@@ -1,0 +1,96 @@
+@import "component/head.scss";
+@import "component/footer.scss";
+.container{
+    padding-top: 160px;
+    min-height: calc(100vh - 50px);
+    width: 770px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.left{
+    float: left;
+    width: 380px;
+    padding-right: 50px;
+    border-right: 1px solid #02224b;
+}
+.box{margin-bottom: 25px;}
+.box span{
+    font-size: 20px;
+    color: #222222;
+    margin-left: 80px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.box img{
+    width: 76px;
+    height: 26px;
+    vertical-align: middle;  
+}
+form input{
+    width: 330px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 12px;
+    border: 1px solid #9a9aa9;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+.dl{
+    background: #03234C;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+.other-login{width: 330px;margin-top: 20px;}
+.panel-footer{
+    padding-top: 24px;
+    width: 330px;
+    padding: 10px 15px;
+}
+.panel-footer ul li{padding: 0 15px;float: left;}
+.line{
+    display: inline-block;
+    border-top: 1px solid #9A9A9A;
+    width: 118px;
+    margin-bottom: 5px;
+}
+.text{font-size: 12px;color: #9A9A9A;}
+.right{
+    float: right;
+    width: 330px;
+    color: #02224B;
+}
+.right h2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.right p{
+    font-size: 14px;
+    color: #999999;
+    margin-bottom: 10px;
+}
+.right ul{ list-style: square;}
+.right ul li{padding: 8px 0;}
+.right>a{
+    display: block;
+    width: 330px;
+    height: 40px;
+    background: #03234C;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    margin-top: 15px;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+}

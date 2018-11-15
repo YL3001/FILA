@@ -1,11 +1,17 @@
 require.config({
 	baseUrl: "/",
 	paths: {
-		"nav": "module/nav",
+		"footer": "module/footer",
 		"jquery": "libs/jquery/jquery-1.11.3",
 		"bootstrap": "libs/bootstrap/js/bootstrap",
 		"tools": "libs/tools",
-		"move":"libs/move"
+		"template": "libs/template-web",
+		"gVerify":"libs/gVerify",
+		"migrate": "libs/jquery-migrate-1.2.1.min",
+		"jquerycookie": "libs/jquery.cookie",
+		"header":"module/header",
+		"addcar":"module/addcar"
+		
 	},
 	//垫片
 	shim:{

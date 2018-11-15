@@ -1,71 +1,59 @@
 require(["config"],function(){
-	require(["jquery","tools","move","nav"],function($,tools,move,nav){
-		
-		tools.ajax("GET","/html/component/header.html",null,function(data){
-			document.getElementsByTagName("header")[0].innerHTML = data;
-		},false);
+	require(["jquery","tools","footer","header"],function($,tools,footer,header){
 		
 		new Promise(function(resolve, reject){
-			tools.ajax("GET", "/html/component/nav.html",null, function(data){
-				document.getElementsByClassName(nav).innerHTML = data;
+			$("header").load("/html/component/header.html", function(){
+				header.head();
+			});
+			$("#nav").load("/html/component/nav.html", function(){
 				resolve();
-			},false);
+			});
+			$("footer").load("/html/component/footer.html", function(){
+				footer.ft();
+			});
 		}).then(function(){
-			nav.cnav();
-		})
-		
-		
-		var lub = function(){
-			var box = tools.$("#lbt"),
-				ul = tools.$("ul",box)[0],
-				aLi =ul.children,
-				len = aLi.length;
-				liWidth = aLi[0].offsetWidth,
-			    timer = null,
-				index = 0,
-				flag = false;
+			$(function(){
+				var $ul = $("#lbt ul"),
+					$imgs = $("#lbt ul li");
+					
+				var index = 0,
+					len = $imgs.length,
+					flag = false,
+					timer = null,
+					imgWidth = $imgs.eq(0).width();
+					
+				$imgs.each(function(){
+					$("<li>").html($(this).index()+1);
+				});
+				$imgs.eq(0).clone(true).appendTo($ul);
+				$ul.css("width", imgWidth*(len+1));
 				
-			ul.appendChild(aLi[0].cloneNode(true));
-			ul.style.width = liWidth * (len+1) + "px";
-			
-			box.onmouseleave = (function autoPlay(){
-				timer = setInterval(function(){
-					if(!flag){
-						flag = true;
-						index++;
-						//判断边界
-						if(index === len){
-							//index作为下标不能超出len-1,所以重置为0
-							//但是，ul会移动到len的位置（追加的那一张图）
-							index = 0;
-							move(ul, {left:-len*liWidth},function(){
-								flag = false;
-								//运动结束之后立马拉回第0张图的位置
-								ul.style.left = "0px";
-							});
-						}else{
-							move(ul,{left: -index*liWidth},function(){
-								flag = false;
-							})
+				$("#lbt").hover(function(){
+					clearInterval(timer);
+				},(function autoPlay(){
+					timer = setInterval(function(){
+						if(!flag){
+							flag = true;
+							if(++index >= len){
+								$ul.animate({"left":-len*imgWidth},"slow",function(){
+									$ul.css("left", 0);
+									//$ul.css({"left": 0});
+									flag = false;
+								})
+								index = 0;
+							}else{
+								$ul.animate({"left":-index*imgWidth},"slow", function(){
+									flag = false;
+								})
+							}
 						}
-					}
-				},3000);
-				return autoPlay;
-			})();
-			
-			box.onmouseenter = function(){
-				clearInterval(timer);
-			}
-		}
-		var wx = tools.$("#ft-weixin");
-		var ewm = tools.$("#ft-weixin-tip");
-		wx.onmouseenter = function(){
-			ewm.style.display = "block";
-		}
-		wx.onmouseleave = function(){
-			ewm.style.display = "none";
-		}
-		lub();
+					},2000);
+					return autoPlay;
+				})());
+			})
+
+		})
+	
 	})
 })
 

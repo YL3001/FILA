@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/detail.css"/>
+	</head>
+	<body>
+		<header></header>
+		<div class="nav" id="nav"></div>
+		<div class="fila-content" id="detail">
+			<script type="text/html" id="detil-template">
+			    <div class="left">
+			    	<div class="detail-line">
+						<img src="{{product.img[1]}}" class="pic1"/>
+						<img src="{{product.img[2]}}" class="pic2"/>
+					</div>
+					<div class="detail-line">
+						<img src="{{product.img[3]}}" class="pic3"/>
+						<img src="{{product.img[4]}}" class="pic4"/>
+					</div>
+					<div class="detail-intro">
+						<p>{{product.intro}}</p>
+					</div>
+					<div>
+						<img src="{{product.img[5]}}" class="pic5"/>
+						<img src="{{product.img[6]}}" class="pic5 mid"/>
+						<img src="{{product.img[7]}}" class="pic5"/>
+					</div>
+			    </div>
+				<div class="right">
+					<div class="wrap">
+						<h2 class="mb20" id="name">{{product.name}}</h2>
+						<p class="price mb20" id="price">￥{{product.price}}.00</p>
+						<p class="tag-price mb20">吊牌价 ￥{{product.tag}}.00</p>
+						<ul class="mb20">
+							<li>
+								<span class="label">购物满减</span>
+								<span>满800元减150元,满1200元减250元,满1600元减350元</span>
+							</li>
+							<li>
+								<span class="label">运费</span>
+								<span>免运费</span>
+							</li>
+						</ul>
+						<div class="pro-color mb20">
+							<h4>颜色:</h4>
+							<ul>
+								<li class="color">{{product.color[0]}}</li>
+								<li class="color">{{product.color[1]}}</li>
+							</ul>
+						</div>
+						<div class="by">
+							<a href="javascript:;" id="buy" class="buy mb20">立即购买</a>
+							<a href="javascript:;" id="car" class="car">加入购物车</a>
+						</div>
+					</div>
+				</div>
+			</script>
+			<script type="text/html" id="rap-template">
+			    <div class="left">
+			    	<div class="detail-line">
+						<img src="{{product[1].img}}" class="pic1"/>
+						<img src="{{product[1].img}}" class="pic2"/>
+					</div>
+					<div class="detail-line">
+						<img src="{{product[1].img}}" class="pic3"/>
+						<img src="{{product[1].img}}" class="pic4"/>
+					</div>
+					<div class="detail-intro">
+						<p>{{product[1].intro}}</p>
+					</div>
+					<div>
+						<img src="{{product[1].img}}" class="pic5"/>
+						<img src="{{product[1].img}}" class="pic5 mid"/>
+						<img src="{{product[1].img}}" class="pic5"/>
+					</div>
+			    </div>
+				<div class="right">
+					<div class="wrap">
+						<h2 class="mb20" id="name">{{product[1].name}}</h2>
+						<p class="price mb20" id="price">￥{{product[1].price}}.00</p>
+						<p class="tag-price mb20">吊牌价 ￥{{product[1].tag}}.00</p>
+						<ul class="mb20">
+							<li>
+								<span class="label">购物满减</span>
+								<span>满800元减150元,满1200元减250元,满1600元减350元</span>
+							</li>
+							<li>
+								<span class="label">运费</span>
+								<span>免运费</span>
+							</li>
+						</ul>
+						<div class="pro-color mb20">
+							<h4>颜色:</h4>
+							<ul>
+								<li class="color">{{product[1].color}}</li>
+							</ul>
+						</div>
+						<div class="by">
+							<a href="javascript:;" id="buy" class="buy mb20">立即购买</a>
+							<a href="javascript:;" id="car" class="car">加入购物车</a>
+						</div>
+					</div>
+				</div>
+			</script>
+		</div>
+		<div class="kf">
+			<span>客服</span>
+		</div>
+        <footer></footer>
+        <script type="text/javascript" src="/libs/require/require.js" data-main="/js/detail.js"></script>
+	</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/car.css"/>
+	</head>
+	<body>
+		<header></header>
+		<div class="main">
+			<div class="shoppingcar">
+				<h1>购物车</h1>
+			</div>
+			<div class="content">
+				<p>您还未登录，请先登录吧！</p>
+				<a href="/html/login.html">立即登录</a>
+			</div>
+			<div class="nopro">
+				<p>您的购物车中没有商品，请先去逛逛吧！</p>
+				<a href="/index.html">立即购物</a>
+			</div>
+			<div class="container">
+				<div class="box">
+					<p>收货人信息</p>
+					<ul class="address">
+						<li>
+							<address>
+								<span class="name">袁玲</span>
+								<span class="phone">17628014398</span>
+								<p class="area">四川 成都市 金牛区</p>
+								<p class="addr">五福桥东路</p>
+								<button class="btn">编辑</button>
+							</address>
+							
+						</li>
+						<li>
+							<button class="add">
+								<img src="/images/add.png" />
+								<p>添加收货地址</p>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<table clariss="table">
+					<thead>
+						<tr>
+							<th class="col-1"></th>
+							<th class="title">商品信息</th>
+							<th class="col-1">单价</th>
+							<th class="col-2 num">数量</th>
+							<th class="col-1">小计</th>
+							<th class="col-2">操作</th>
+						</tr>
+					</thead>
+					<tbody id="tbody"></tbody>
+						<script type="text/html" id="car-template">
+						{{each products item i}}
+							<tr class="tr-tbody">
+								<td class="col-1 hide">{{item.id}}</td>
+								<td class="col-3">
+									<div class="left">
+										<img src="{{item.img[0]}}" />
+									</div>
+									<div class="right">
+										<h5>{{item.name}}</h5>
+										<p>{{item.color}}</p>
+									</div>
+								</td>
+								<td class="col-1 price">
+									<span>￥ {{item.price}}.00</span>
+								</td>
+								<td class="col-2 num">
+									<button class="btn-default">-</button>
+									<input type="button" value="{{item.num}}" id="num" />
+									<button class="btn-add">+</button>
+								</td>
+								<td class="col-1 amount">
+									<span id="amount">￥{{item.price*item.num}}</span>
+								</td>
+								<td class="col-2 opt">
+									<a href="javascript:;" class="delBtn">删除</a>
+								</td>
+							</tr>
+						{{/each}}
+					</script>	
+				</table>
+				<div class="min-foot">
+					<ul>
+						<li id="all-num">件商品</li>
+						<li id="all-price">商品总价 ： ￥</li>
+						<li>运费 ： +￥ 0</li>
+						<li class="all-pay">订单结算 ￥</li>
+					</ul>
+				</div>
+				<button class="pay">去结算</button>
+			</div>
+		</div>
+		<form>
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close">x</button>
+					<h4 class="modal-title">收件人信息 编辑</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+                        <label for="maddr_name" class="col-sm-2 control-label">姓名
+                            <em class="text-danger">*</em>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" required="true" name="maddr[name]" class="form-control" id="maddr_name" placeholder="收货人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maddr_mobile" class="col-sm-2 control-label">手机
+                            <em class="text-danger">*</em>
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" required="true" name="maddr[mobile]" class="form-control" id="maddr_mobile" placeholder="手机号码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maddr_area" class="col-sm-2 control-label">收货地区
+                            <em class="text-danger">*</em>
+                        </label>
+                        <div class="col-sm-10">
+                            <div class="input-group  region" id="maddr_region">
+                                <input name="maddr[area]" data-v="" package="mainland" type="hidden" value="" />
+                                <select data-level-index="0" class="form-control input-xsmall">
+                                    <option value="_NULL_">请选择</option>
+                                </select>
+                                <select data-level-index="1" class="form-control input-xsmall" style="visibility:hidden"></select>
+                                <select data-level-index="2" class="form-control input-xsmall" style="visibility:hidden"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maddr_addr" class="col-sm-2 control-label">收货地址
+                            <em class="text-danger">*</em>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" required="true" name="maddr[addr]" class="form-control" id="maddr_addr" placeholder="街道\门牌号码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maddr_zip" class="col-sm-2 control-label">邮编</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="maddr[zip]" class="form-control input-sm" id="maddr_zip" placeholder="邮政编码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maddr_tel" class="col-sm-2 control-label">固话</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="maddr[tel]" class="form-control input-sm" id="maddr_tel" placeholder="固定电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="maddr_tel" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-5">
+                            <input type="email" name="maddr[email]" class="form-control input-sm" id="maddr_tel" placeholder="填写此项可接收订单状态通知">
+                        </div>
+                    </div>
+
+				</div>
+			</div>
+		</form>
+		<div class="modal-backdrop"></div>
+		<div class="kf">
+			<span>客服</span>
+		</div>
+        <footer></footer>
+		<script type="text/javascript" src="/libs/require/require.js" data-main="/js/car.js"></script>
+	</body>
+</html>
